@@ -1,0 +1,33 @@
+{% extends 'shopapp/base.html' %}
+
+{% block title %}
+    Shop Index
+{% endblock %}
+
+{% block body %}
+    <h1>Hello, Shop Index</h1>
+
+    <div>
+        <ul>
+            {% filter force_escape|lower %}
+                This text will be HTML-escaped, and will appear in all lowercase.
+            {% endfilter %}
+            {% for name, price in products %}
+                <li>{{ name|add:' - new product'}} for ${{ price }}</li>
+                {% if name|length == 7 %}
+                <span>Luky product</span>
+                {%endif%}
+            {% empty %}
+                No products here
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        Time running: {{ time_running }}
+    </div>
+
+    <div>
+        {% lorem 3 p random %}
+    </div>
+
+{% endblock %}

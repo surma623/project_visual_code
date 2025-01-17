@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "batisteo.vscode-django",
+        "wholroyd.jinja",
+        "formulahendry.code-runner",
+        "ms-python.vscode-pylance"
+    ]
+}
